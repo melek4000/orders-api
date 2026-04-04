@@ -1,0 +1,16 @@
+stages:
+  - build
+  - scan
+  - deploy
+
+build:
+  script:
+    - docker build -t melek4000/orders-api:v1 .
+
+scan:
+  script:
+    - trivy image melek4000/orders-api:v1
+
+deploy:
+  script:
+    - kubectl apply -f k8s/
