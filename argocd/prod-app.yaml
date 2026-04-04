@@ -1,0 +1,16 @@
+# argocd/prod-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: orders-prod
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/YOUR_REPO
+    path: k8s/overlays/prod
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+  syncPolicy:
+    automated: {}

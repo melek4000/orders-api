@@ -1,0 +1,8 @@
+# k8s/overlays/prod/kustomization.yaml
+resources:
+- orders-api/k8s/base
+namespace: prod
+
+replicas:
+- name: orders
+  count: 3

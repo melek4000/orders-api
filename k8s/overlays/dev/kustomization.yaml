@@ -1,0 +1,11 @@
+# k8s/overlays/dev/kustomization.yaml
+resources:
+- orders-api/k8s/base
+
+namespace: dev
+
+nameSuffix: -dev
+
+replicas:
+- name: orders
+  count: 1
