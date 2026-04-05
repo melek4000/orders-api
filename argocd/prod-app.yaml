@@ -5,8 +5,9 @@ metadata:
   name: orders-prod
   namespace: argocd
 spec:
+  project: default
   source:
-    repoURL: https://github.com/YOUR_REPO
+    repoURL: https://github.com/melek4000/orders-api.git
     path: k8s/overlays/prod
     targetRevision: HEAD
   destination:
